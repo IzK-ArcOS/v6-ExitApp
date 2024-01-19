@@ -1,9 +1,46 @@
 <script lang="ts">
-  import { App } from "$types/app";
+  import { ProcessStack } from "$ts/stores/process";
   import "./css/main.css";
+  import { Runtime } from "./ts/runtime";
+  import { ExitActions } from "./ts/store";
 
-  export let app: App;
+  export let runtime: Runtime;
+
+  let selected = "";
+
+  function confirm() {
+    if (!ExitActions[selected]) return;
+
+    ExitActions[selected].action();
+
+    exit();
+  }
+
+  function exit() {
+    ProcessStack.kill(runtime.pid, true);
+  }
 </script>
 
-<h1>Hello, World!</h1>
-<p>Working! App {app.metadata.name}, version {app.metadata.version}.</p>
+<div class="bg"></div>
+<div class="content">
+  <div class="header">
+    <h1>Exit ArcOS</h1>
+    <p>What's your escape route?</p>
+  </div>
+  <div class="options">
+    {#each Object.entries(ExitActions) as [id, action]}
+      <button
+        class="option"
+        on:click={() => (selected = id)}
+        class:selected={selected == id}
+      >
+        <img src={action.icon} alt="" class="icon" />
+        <p>{action.caption}</p>
+      </button>
+    {/each}
+  </div>
+  <div class="confirm">
+    <button class="suggested" on:click={confirm}>Confirm</button>
+    <button on:click={exit}>Cancel</button>
+  </div>
+</div>

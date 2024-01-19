@@ -14,9 +14,9 @@ export const ExitApp: App = {
   runtime: Runtime,
   content: AppSvelte,
   id: "ExitApp",
-  size: { w: 0, h: 0 },
-  minSize: { w: 0, h: 0 },
-  maxSize: { w: 0, h: 0 },
+  size: { w: NaN, h: NaN },
+  minSize: { w: NaN, h: NaN },
+  maxSize: { w: NaN, h: NaN },
   pos: { x: 0, y: 0 },
   state: {
     minimized: false,
