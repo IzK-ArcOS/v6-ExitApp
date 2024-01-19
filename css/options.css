@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  border-bottom: var(--button-hover-bg) 1px solid;
+  border-bottom: var(--button-glass-hover-bg) 1px solid;
   padding-bottom: 20px;
 }
 
