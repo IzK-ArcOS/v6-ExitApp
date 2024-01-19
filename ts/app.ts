@@ -1,4 +1,5 @@
 import { ShutdownIcon } from "$ts/images/power";
+import { appLibrary } from "$ts/stores/apps";
 import { App } from "$types/app";
 import AppSvelte from "../App.svelte";
 import { Runtime } from "./runtime";
@@ -29,5 +30,7 @@ export const ExitApp: App = {
     minimize: false,
     maximize: false,
     close: false
-  }
+  },
+  singleInstance: true,
+  loadCondition: () => appLibrary.get().has("ArcShell")
 }

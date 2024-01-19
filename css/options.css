@@ -1,0 +1,30 @@
+#ExitApp div.content div.options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: var(--button-hover-bg) 1px solid;
+  padding-bottom: 20px;
+}
+
+#ExitApp div.content div.options button {
+  width: 80px;
+  height: 75px;
+  padding: 0;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+}
+
+#ExitApp div.content div.options button .icon {
+  height: 32px;
+}
+
+#ExitApp div.content div.options button.selected {
+  color: var(--accent-darkest);
+  background-color: var(--accent);
+}

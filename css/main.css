@@ -1,3 +1,7 @@
+@import url("./header.css");
+@import url("./options.css");
+@import url("./backdrop.css");
+
 #ExitApp {
   z-index: 1000000000000000 !important;
   scale: 1 !important;
@@ -17,56 +21,27 @@
   align-items: center;
   flex-direction: column;
   gap: 20px;
+  width: 400px;
+  margin-top: 50px;
   padding: 40px;
   background-color: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
   border: var(--win-border);
+  backdrop-filter: blur(var(--glass-blur));
   text-align: center;
-  width: 400px;
   border-radius: var(--win-border-rad);
+  scale: 0.9;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  box-shadow: 0 5px 15px 5px #0003;
 }
 
-#ExitApp div.content h1 {
-  font-size: 22px;
-}
-
-#ExitApp div.content div.header {
-  margin-bottom: 20px;
-}
-
-#ExitApp div.content div.header p {
-  opacity: 0.5;
-}
-
-#ExitApp div.content div.options {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-bottom: var(--button-hover-bg) 1px solid;
-  padding-bottom: 20px;
-}
-
-#ExitApp div.content div.options button {
-  width: 80px;
-  height: 75px;
-  padding: 0;
-  padding-bottom: 5px;
-  padding-top: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  background-color: transparent;
-}
-
-#ExitApp div.content div.options button .icon {
-  height: 32px;
-}
-
-#ExitApp div.content div.options button.selected {
-  color: var(--accent-darkest);
-  background-color: var(--accent);
+#ExitApp div.content.show {
+  margin-top: 0px;
+  scale: 1;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
 }
 
 #ExitApp div.content div.confirm {
@@ -80,17 +55,4 @@
 
 #ExitApp div.content * {
   margin: 0;
-}
-
-#ExitApp div.bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  background-image: var(--wallpaper);
-  filter: brightness(0.5);
-  z-index: -1;
 }

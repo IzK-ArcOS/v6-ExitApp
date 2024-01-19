@@ -1,12 +1,21 @@
 <script lang="ts">
   import { ProcessStack } from "$ts/stores/process";
+  import { onMount } from "svelte";
   import "./css/main.css";
   import { Runtime } from "./ts/runtime";
   import { ExitActions } from "./ts/store";
+  import { sleep } from "$ts/util";
 
   export let runtime: Runtime;
 
+  let show = false;
   let selected = "";
+
+  onMount(async () => {
+    await sleep(200);
+
+    show = true;
+  });
 
   function confirm() {
     if (!ExitActions[selected]) return;
@@ -16,13 +25,17 @@
     exit();
   }
 
-  function exit() {
+  async function exit() {
+    show = false;
+
+    await sleep(200);
+
     ProcessStack.kill(runtime.pid, true);
   }
 </script>
 
 <div class="bg"></div>
-<div class="content">
+<div class="content" class:show>
   <div class="header">
     <h1>Exit ArcOS</h1>
     <p>What's your escape route?</p>

@@ -1,0 +1,11 @@
+#ExitApp div.content h1 {
+  font-size: 22px;
+}
+
+#ExitApp div.content div.header {
+  margin-bottom: 20px;
+}
+
+#ExitApp div.content div.header p {
+  opacity: 0.5;
+}
