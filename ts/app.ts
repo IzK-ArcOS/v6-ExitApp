@@ -10,7 +10,9 @@ export const ExitApp: App = {
     description: "The Exit menu",
     author: "The ArcOS Team",
     version: "2.0.0",
-    icon: ShutdownIcon
+    icon: ShutdownIcon,
+    hidden: true,
+    appGroup: "internal"
   },
   runtime: Runtime,
   content: AppSvelte,
