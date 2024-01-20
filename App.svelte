@@ -12,6 +12,13 @@
   let selected = "";
 
   onMount(async () => {
+    const args = runtime.process.args;
+    const ids = Object.keys(ExitActions);
+
+    if (typeof args[0] == "string" && ids.includes(args[0])) {
+      selected = args[0];
+    }
+
     await sleep(200);
 
     show = true;
@@ -53,7 +60,9 @@
     {/each}
   </div>
   <div class="confirm">
-    <button class="suggested" on:click={confirm}>Confirm</button>
+    <button class="suggested" on:click={confirm} disabled={!selected}
+      >Confirm</button
+    >
     <button on:click={exit}>Cancel</button>
   </div>
 </div>
