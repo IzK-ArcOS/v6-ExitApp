@@ -1,10 +1,10 @@
 <script lang="ts">
   import { ProcessStack } from "$ts/stores/process";
+  import { sleep } from "$ts/util";
   import { onMount } from "svelte";
   import "./css/main.css";
   import { Runtime } from "./ts/runtime";
   import { ExitActions } from "./ts/store";
-  import { sleep } from "$ts/util";
 
   export let runtime: Runtime;
 
