@@ -1,5 +1,4 @@
 import { logout, restart, shutdown } from "$state/Desktop/ts/power";
-import { ConnectIcon } from "$ts/images/general";
 import { LogoutIcon, RestartIcon, ShutdownIcon } from "$ts/images/power";
 
 export let ExitActions = {
@@ -17,10 +16,5 @@ export let ExitActions = {
     action: logout,
     caption: "Logout",
     icon: LogoutIcon,
-  },
-  $changeHost: {
-    action: null,
-    caption: "Pick Host",
-    icon: ConnectIcon,
   },
 };
