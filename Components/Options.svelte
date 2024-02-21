@@ -9,11 +9,7 @@
 
 <div class="options">
   {#each Object.entries(ExitActions) as [id, action]}
-    <button
-      class="option"
-      on:click={() => ($selected = id)}
-      class:selected={$selected == id}
-    >
+    <button class="option" on:click={() => ($selected = id)} class:selected={$selected == id}>
       <img src={action.icon} alt="" class="icon" />
       <p>{action.caption}</p>
     </button>

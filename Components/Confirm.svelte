@@ -26,8 +26,6 @@
 </script>
 
 <div class="confirm">
-  <button class="suggested" on:click={confirm} disabled={!selected}>
-    Confirm
-  </button>
+  <button class="suggested" on:click={confirm} disabled={!selected}> Confirm </button>
   <button on:click={exit}>Cancel</button>
 </div>

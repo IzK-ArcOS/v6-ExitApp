@@ -12,7 +12,7 @@ export const ExitApp: App = {
     version: "2.0.0",
     icon: ShutdownIcon,
     hidden: true,
-    appGroup: "internal"
+    appGroup: "internal",
   },
   runtime: Runtime,
   content: AppSvelte,
@@ -26,13 +26,13 @@ export const ExitApp: App = {
     maximized: false,
     headless: true,
     fullscreen: true,
-    resizable: false
+    resizable: false,
   },
   controls: {
     minimize: false,
     maximize: false,
-    close: false
+    close: false,
   },
   singleInstance: true,
-  loadCondition: () => appLibrary.get().has("ArcShell")
-}
+  loadCondition: () => appLibrary.get().has("ArcShell"),
+};
